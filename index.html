@@ -55,7 +55,22 @@
     nav a:hover {
       color: #e50914;
     }
+.search-box {
+  margin-left: 20px;
+}
 
+.search-box input {
+  padding: 9px 14px;
+  width: 190px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  box-shadow: 0 0 5px #e50914;
+      }
     /* BREAKING NEWS */
     .breaking {
       background: #e50914;
@@ -267,6 +282,18 @@
     </div>
 
     <nav>
+      <nav>
+  <a href="#home">Home</a>
+  <a href="#habari">Habari</a>
+  <a href="#michezo">Michezo</a>
+  <a href="#street">Street Interview</a>
+  <a href="#video">Video</a>
+  <a href="#burudani">Burudani</a>
+</nav>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="🔎 Tafuta habari...">
+</div>
       <a href="#home">Home</a>
       <a href="#habari">Habari</a>
       <a href="#michezo">Michezo</a>
@@ -276,7 +303,22 @@
     </nav>
 
   </header>
+.search-box {
+  margin-left: 20px;
+}
 
+.search-box input {
+  padding: 9px 14px;
+  width: 190px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  box-shadow: 0 0 5px #e50914;
+}
 
   <!-- BREAKING NEWS -->
   <div class="breaking">
@@ -526,6 +568,23 @@
     </p>
 
   </footer>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card");
 
+  searchInput.addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+
+    cards.forEach(function (card) {
+      const text = card.innerText.toLowerCase();
+
+      if (text.includes(searchTerm)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+  </script>
 </body>
         </html>
