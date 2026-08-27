@@ -1,435 +1,552 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HARDBOYTV - Street Interviews & Entertainment</title>
+  <title>HARDBOYTV | Habari, Michezo & Burudani</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta name="description" content="HARDBOYTV - Habari, michezo, street interviews, burudani na video.">
 
-        body {
-            background: #f5f5f5;
-            color: #222;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background: #111;
-            color: white;
-            padding: 18px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+    }
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-        }
+    /* HEADER */
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .logo span {
-            color: #ffcc00;
-        }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 14px;
-        }
+    .logo span {
+      color: #e50914;
+    }
 
-        nav a:hover {
-            color: #ffcc00;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
 
-        .hero {
-            min-height: 500px;
-            background:
-                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3")
-                center/cover;
+    nav a:hover {
+      color: #e50914;
+    }
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 30px;
-        }
+    /* BREAKING NEWS */
+    .breaking {
+      background: #e50914;
+      color: white;
+      padding: 10px 5%;
+      font-weight: bold;
+    }
 
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
+    /* HERO */
+    .hero {
+      min-height: 430px;
+      background:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=80")
+        center/cover;
 
-        .hero p {
-            font-size: 19px;
-            margin-bottom: 25px;
-        }
+      display: flex;
+      align-items: center;
+      padding: 40px 7%;
+      color: white;
+    }
 
-        .button {
-            display: inline-block;
-            padding: 13px 25px;
-            background: #ffcc00;
-            color: #111;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+    .hero-content {
+      max-width: 700px;
+    }
 
-        section {
-            padding: 60px 7%;
-        }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 35px;
-            font-size: 30px;
-        }
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 25px;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
+    .btn {
+      display: inline-block;
+      background: #e50914;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-        }
+    .btn:hover {
+      background: #b80710;
+    }
 
-        .card img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-        }
+    /* CONTAINER */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
 
-        .card-content {
-            padding: 20px;
-        }
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 20px;
+      border-left: 5px solid #e50914;
+      padding-left: 12px;
+    }
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+    /* NEWS CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
 
-        .card p {
-            line-height: 1.6;
-        }
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,.1);
+      transition: .3s;
+    }
 
-        .about {
-            background: white;
-            text-align: center;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-        .about p {
-            max-width: 750px;
-            margin: auto;
-            line-height: 1.8;
-        }
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
 
-        .contact {
-            background: #111;
-            color: white;
-            text-align: center;
-        }
+    .card-content {
+      padding: 18px;
+    }
 
-        .social {
-            margin-top: 25px;
-        }
+    .card-content h3 {
+      margin-bottom: 10px;
+    }
 
-        .social a {
-            display: inline-block;
-            margin: 6px;
-            padding: 12px 18px;
-            background: #ffcc00;
-            color: #111;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+    .category {
+      color: #e50914;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-        footer {
-            background: #000;
-            color: #aaa;
-            text-align: center;
-            padding: 20px;
-        }
+    /* VIDEO */
+    .video-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-        @media (max-width: 700px) {
+    .video {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+    }
 
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+    .video iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      left: 0;
+      top: 0;
+    }
 
-            nav a {
-                margin: 4px;
-                font-size: 12px;
-            }
+    /* SOCIAL */
+    .social {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
 
-            .hero h1 {
-                font-size: 40px;
-            }
+    .social a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      margin: 8px;
+      padding: 10px 18px;
+      border-radius: 5px;
+      background: #e50914;
+    }
 
-            .hero p {
-                font-size: 16px;
-            }
-        }
-    </style>
+    /* FOOTER */
+    footer {
+      background: #080808;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 380px;
+        padding: 30px 6%;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<header>
+  <!-- HEADER -->
+  <header>
 
     <div class="logo">
-        HARDBOY<span>TV</span>
+      HARDBOY<span>TV</span>
     </div>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#videos">Videos</a>
-        <a href="#news">News</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#habari">Habari</a>
+      <a href="#michezo">Michezo</a>
+      <a href="#street">Street Interview</a>
+      <a href="#video">Video</a>
+      <a href="#burudani">Burudani</a>
     </nav>
 
-</header>
+  </header>
 
 
-<!-- HOME -->
+  <!-- BREAKING NEWS -->
+  <div class="breaking">
+    🔴 BREAKING NEWS: Karibu HARDBOYTV — Habari, Michezo & Burudani
+  </div>
 
-<section class="hero" id="home">
 
-    <div>
+  <!-- HERO -->
+  <section class="hero" id="home">
 
-        <h1>HARDBOYTV</h1>
+    <div class="hero-content">
 
-        <p>
-            Street Interviews • Entertainment • News • Knowledge
-        </p>
+      <h1>Karibu HARDBOYTV</h1>
 
-        <a href="#videos" class="button">
-            Tazame Videos
-        </a>
+      <p>
+        Chanzo chako cha habari, michezo, street interviews,
+        burudani na video mbalimbali.
+      </p>
+
+      <a href="#habari" class="btn">
+        Soma Habari
+      </a>
 
     </div>
 
-</section>
+  </section>
 
 
-<!-- VIDEOS -->
+  <!-- HABARI -->
+  <section class="container" id="habari">
 
-<section id="videos">
-
-    <h2>Latest Videos</h2>
+    <h2 class="section-title">
+      📰 Habari Mpya
+    </h2>
 
     <div class="cards">
 
-        <div class="card">
+      <article class="card">
 
-            <iframe
-    width="100%"
-    height="400"
-    src="https://www.youtube.com/embed/jdkBeMgsaos"
-                <iframe
-    width="100%"
-    height="400"
-    src="https://www.youtube.com/embed/pSkr2GY5jd8"
-    title="HARDBOYTV Video 2"
-    frameborder="0"
-    allowfullscreen>
-            </iframe>
-    title="HARDBOYTV Street Interview"
-    frameborder="0"
-    allowfullscreen>
-            </iframe>
+        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=900&q=80">
 
-            <div class="card-content">
+        <div class="card-content">
 
-                <h3>Street Interview</h3>
+          <div class="category">HABARI</div>
 
-                <p>
-                    Tunazungumza na watu kuhusu maisha,
-                    burudani na masuala mbalimbali ya jamii.
-                </p>
+          <h3>
+            Habari mbalimbali kutoka Tanzania
+          </h3>
 
-            </div>
+          <p>
+            Endelea kufuatilia HARDBOYTV kwa habari
+            mbalimbali na taarifa zinazokuhusu.
+          </p>
 
         </div>
 
+      </article>
 
-        <div class="card">
 
-            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+      <article class="card">
 
-            <div class="card-content">
+        <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80">
 
-                <h3>Entertainment</h3>
+        <div class="card-content">
 
-                <p>
-                    Habari za burudani, wasanii na matukio
-                    mbalimbali.
-                </p>
+          <div class="category">MIPANGO</div>
 
-            </div>
+          <h3>
+            Taarifa na matukio mbalimbali
+          </h3>
+
+          <p>
+            Tunakuletea taarifa muhimu kwa wakati.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=80">
+
+        <div class="card-content">
+
+          <div class="category">MICHEZO</div>
+
+          <h3>
+            Habari za michezo
+          </h3>
+
+          <p>
+            Fuatilia habari za mpira na michezo mbalimbali.
+          </p>
 
         </div>
 
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f">
-
-            <div class="card-content">
-
-                <h3>Knowledge</h3>
-
-                <p>
-                    Maarifa na taarifa zinazoweza kukusaidia
-                    katika maisha ya kila siku.
-                </p>
-
-            </div>
-
-        </div>
+      </article>
 
     </div>
 
-</section>
+  </section>
 
 
-<!-- NEWS -->
+  <!-- STREET INTERVIEW -->
+  <section class="container" id="street">
 
-<section id="news">
-
-    <h2>Latest News</h2>
+    <h2 class="section-title">
+      🎤 Street Interview
+    </h2>
 
     <div class="cards">
 
-        <div class="card">
+      <article class="card">
 
-            <div class="card-content">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80">
 
-                <h3>Karibu HARDBOYTV</h3>
+        <div class="card-content">
 
-                <p>
-                    Karibu kwenye platform ya HARDBOYTV
-                    kwa habari, burudani, interviews na maarifa.
-                </p>
+          <div class="category">STREET INTERVIEW</div>
 
-            </div>
+          <h3>
+            Maoni ya watu mitaani
+          </h3>
 
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-content">
-
-                <h3>Street Interviews</h3>
-
-                <p>
-                    Tunawapa watu nafasi ya kutoa maoni yao
-                    kuhusu mambo mbalimbali yanayotokea kwenye jamii.
-                </p>
-
-            </div>
+          <p>
+            Tazama maswali na majibu kutoka kwa watu mbalimbali.
+          </p>
 
         </div>
+
+      </article>
 
     </div>
 
-</section>
+  </section>
 
 
-<!-- ABOUT -->
+  <!-- MICHEZO -->
+  <section class="container" id="michezo">
 
-<section class="about" id="about">
+    <h2 class="section-title">
+      ⚽ Michezo
+    </h2>
 
-    <h2>About HARDBOYTV</h2>
+    <div class="cards">
 
-    <p>
-        HARDBOYTV ni platform ya digital media inayolenga
-        kuleta street interviews, entertainment, news na
-        knowledge kwa jamii.
+      <article class="card">
 
-        Lengo letu ni kuwapa watu habari, burudani na nafasi
-        ya kushirikisha mawazo yao kupitia digital media.
-    </p>
+        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80">
 
-</section>
+        <div class="card-content">
 
+          <div class="category">SPORTS</div>
 
-<!-- CONTACT -->
+          <h3>
+            Habari za mpira
+          </h3>
 
-<section class="contact" id="contact">
-
-    <h2>Follow HARDBOYTV</h2>
-
-    <p>
-        Tufuatilie kwenye mitandao yetu ya kijamii.
-    </p>
-
-    <div class="social">
-
-        <div class="social">
-
-    <a href="https://www.facebook.com/profile.php?id=61583907407248" target="_blank">
-        Facebook
-    </a>
-
-    <a href="https://youtube.com/@hardboy-u5t?si=5yHAGjCOfIEo2hOQ" target="_blank">
-        YouTube
-    </a>
-
-    <a href="https://wa.me/255671608285" target="_blank">
-        WhatsApp
-    </a>
+          <p>
+            Pata taarifa mpya kuhusu soka na michezo mingine.
+          </p>
 
         </div>
-            Facebook
-        </a>
 
-        <a href="#" target="_blank">
-            YouTube
-        </a>
-
-        <a href="#" target="_blank">
-            TikTok
-        </a>
-
-        <a href="#" target="_blank">
-            WhatsApp
-        </a>
+      </article>
 
     </div>
 
-</section>
+  </section>
 
 
-<!-- FOOTER -->
+  <!-- VIDEO -->
+  <section class="container" id="video">
 
-<footer>
+    <h2 class="section-title">
+      🎬 Video za HARDBOYTV
+    </h2>
+
+    <div class="video-box">
+
+      <!-- BADILISHA VIDEO_ID KUWEKA VIDEO YAKO YA YOUTUBE -->
+      <div class="video">
+
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          title="HARDBOYTV YouTube Video"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BURUDANI -->
+  <section class="container" id="burudani">
+
+    <h2 class="section-title">
+      🎵 Burudani
+    </h2>
+
+    <div class="cards">
+
+      <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80">
+
+        <div class="card-content">
+
+          <div class="category">BURUDANI</div>
+
+          <h3>
+            Muziki na burudani
+          </h3>
+
+          <p>
+            Habari na matukio mbalimbali ya burudani.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- SOCIAL MEDIA -->
+  <section class="social">
+
+    <h2>📲 Tufuate HARDBOYTV</h2>
 
     <p>
-        © 2026 HARDBOYTV. All Rights Reserved.
+      Usikose habari, video na Street Interviews zetu.
     </p>
 
-</footer>
+    <br>
+
+    <a href="#" target="_blank">
+      Facebook
+    </a>
+
+    <a href="#" target="_blank">
+      YouTube
+    </a>
+
+    <a href="#" target="_blank">
+      WhatsApp
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 <strong>HARDBOYTV</strong>. All Rights Reserved.
+    </p>
+
+    <p>
+      Habari • Michezo • Street Interview • Burudani • Video
+    </p>
+
+  </footer>
 
 </body>
-  </html>
+        </html>
